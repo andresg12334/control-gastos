@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mis Gastos">
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQ29udHJvbCBkZSBHYXN0b3MiLCJzaG9ydF9uYW1lIjoiTWlzIEdhc3RvcyIsInN0YXJ0X3VybCI6Ii4vIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiI2ZmZmZmZiIsInRoZW1lX2NvbG9yIjoiIzY2N2VlYSIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDEwMCAxMDAnJTNFJTNDZGVmcyUzRSUzQ2xpbmVhckdyYWRpZW50IGlkPSdnJyB4MT0nMCUnIHkxPScwJScgeDI9JzEwMCUyNScgeTI9JzEwMCUyNSclM0UlM0NzdG9wIG9mZnNldD0nMCUyNScgc3R5bGU9J3N0b3AtY29sb3I6JTIzNjY3ZWVhJy8lM0UlM0NzdG9wIG9mZnNldD0nMTAwJTI1JyBzdHlsZT0nc3RvcC1jb2xvcjolMjM3NjRiYTInLyUzRSUzQy9saW5lYXJHcmFkaWVudCUzRSUzQy9kZWZzJTNFJTNDcmVjdCB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwMCcgZmlsbD0ndXJsKCUyM2cpJy8lM0UlM0N0ZXh0IHg9JzUwJyB5PSc2NScgZm9udC1zaXplPSc1MCcgdGV4dC1hbmNob3I9J21pZGRsZSclM0UlRjAlOUYlOTIlQjAlM0MvdGV4dCUzRSUzQy9zdmclM0UiLCJzaXplcyI6IjE5MngxOTIiLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCJ9LHsic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJyUzRSUzQ2RlZnMlM0UlM0NsaW5lYXJHcmFkaWVudCBpZD0nZycgeDE9JzAlMjUnIHkxPScwJTI1JyB4Mj0nMTAwJTI1JyB5Mj0nMTAwJTI1JyUzRSUzQ3N0b3Agb2Zmc2V0PScwJTI1JyBzdHlsZT0nc3RvcC1jb2xvcjolMjM2NjdlZWEnLyUzRSUzQ3N0b3Agb2Zmc2V0PScxMDAlMjUnIHN0eWxlPSdzdG9wLWNvbG9yOiUyMzc2NGJhMicvJTNFJTNDL2xpbmVhckdyYWRpZW50JTNFJTNDL2RlZnMlM0UlM0NyZWN0IHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJyBmaWxsPSd1cmwoJTIzZyknLyUzRSUzQ3RleHQgeD0nNTAnIHk9JzY1JyBmb250LXNpemU9JzUwJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyUzRSVGMCU5RiU5MiVCMCUzQy90ZXh0JTNFJTNDL3N2ZyUzRSIsInNpemVzIjoiNTEyeDUxMiIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn1dfQ==">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea'/%3E%3Cstop offset='100%25' style='stop-color:%23764ba2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23g)'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle'%3E💰%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea'/%3E%3Cstop offset='100%25' style='stop-color:%23764ba2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23g)'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle'%3E💰%3C/text%3E%3C/svg%3E">
+    <title>Mis Gastos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1em;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.3em;
+            color: #667eea;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .budget-setup {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .budget-setup input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2em;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card.blue {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .stat-card.green {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        
+        .stat-card.orange {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        
+        .stat-card h3 {
+            font-size: 0.8em;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+        
+        .stat-card .amount {
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+        
+        .form-grid {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 0.95em;
+        }
+        
+        input, select {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 600;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            margin-top: 10px;
+        }
+        
+        .category-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .category-item {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .category-item:active {
+            transform: scale(0.98);
+        }
+        
+        .category-item h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .category-item .cat-amount {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .category-expenses {
+            margin-top: 15px;
+            padding: 0 5px;
+            display: none;
+        }
+
+        .category-expenses.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        .category-expense-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .category-expense-item .expense-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .category-expense-item .expense-date {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .category-expense-item .expense-amount {
+            color: #f5576c;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .category-expense-item .expense-desc {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: #f8f9ff;
+            border-radius: 5px;
+        }
+
+        .category-expense-item .delete-btn-small {
+            background: #f5576c;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        .category-expense-item .delete-btn-small:active {
+            background: #e04858;
+        }px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .category-expense-item .expense-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .category-expense-item .expense-date {
+            color: #999;
+            font-size: 0.85em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .category-expense-item .expense-amount {
+            color: #f5576c;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .category-expense-item .expense-desc {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+            padding: 8px 0;
+        }
+
+        .category-expense-item .delete-btn-small {
+            background: #f5576c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85em;
+            width: 100%;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .category-expense-item .delete-btn-small:active {
+            background: #e04858;
+        }
+
+        .expand-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .expand-icon.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .expense-list {
+            margin-top: 15px;
+        }
+        
+        .expense-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .expense-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .expense-category {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .expense-amount {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #f5576c;
+        }
+        
+        .expense-details {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .expense-date {
+            color: #999;
+            font-size: 0.85em;
+        }
+        
+        .delete-btn {
+            background: #f5576c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            width: 100%;
+            margin-top: 8px;
+        }
+        
+        .delete-btn:hover {
+            background: #e04858;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+        }
+        
+        .empty-state-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .alert {
+            background: #43e97b;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+
+        .alert.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .export-buttons {
+            display: grid;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-export {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            .stat-card .amount {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Control de Gastos</h1>
+            <p>Personal y privado • Guardado local</p>
+        </div>
+        
+        <div class="content">
+            <div class="alert" id="alert">✓ Gasto guardado correctamente</div>
+
+            <div class="section">
+                <div class="budget-setup">
+                    <label>💵 Presupuesto/Préstamo Inicial</label>
+                    <input type="number" id="presupuestoInicial" placeholder="Ingresa el monto inicial" value="0">
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-card orange">
+                        <h3>INICIAL</h3>
+                        <div class="amount" id="inicial">$0</div>
+                    </div>
+                    <div class="stat-card blue">
+                        <h3>GASTADO</h3>
+                        <div class="amount" id="totalGastado">$0</div>
+                    </div>
+                    <div class="stat-card green">
+                        <h3>DISPONIBLE</h3>
+                        <div class="amount" id="disponible">$0</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">➕ Nuevo Gasto</h2>
+                <form id="gastoForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>📅 Fecha</label>
+                            <input type="date" id="fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label>📂 Categoría</label>
+                            <select id="categoria" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="AHORRO">💰 AHORRO</option>
+                                <option value="SALIDAS">SALIDAS</option>
+                                <option value="CIVICA">CÍVICA</option>
+                                <option value="SPOTIFY">SPOTIFY</option>
+                                <option value="COMIDA">COMIDA</option>
+                                <option value="CASA">CASA</option>
+                                <option value="INT/CEL/PARAB">INT/CEL/PARAB</option>
+                                <option value="SERVICIOS">SERVICIOS</option>
+                                <option value="Quincena">Quincena</option>
+                                <option value="Gastado">Gastado</option>
+                                <option value="OTRO">OTRO</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>💵 Monto</label>
+                            <input type="number" id="monto" placeholder="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>📝 Descripción</label>
+                            <input type="text" id="descripcion" placeholder="¿En qué gastaste?">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn">Agregar Gasto</button>
+                </form>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">📊 Gastos por Categoría</h2>
+                <p style="color: #666; font-size: 0.9em; margin-bottom: 15px;">👆 Toca cada categoría para ver los detalles</p>
+                <div class="category-breakdown" id="categoryBreakdown">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📭</div>
+                        <p>No hay gastos registrados</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">⚙️ Opciones</h2>
+                <div class="export-buttons">
+                    <button class="btn-export" onclick="exportarDatos()">💾 Exportar Datos (Backup)</button>
+                    <button class="btn-export" onclick="document.getElementById('importFile').click()">📥 Importar Datos</button>
+                    <input type="file" id="importFile" accept=".json" style="display: none;" onchange="importarDatos(event)">
+                </div>
+                <button class="btn btn-secondary" onclick="resetearTodo()">🔄 Reiniciar Todo</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let presupuesto = 0;
+        let gastos = [];
+        
+        // Establecer fecha actual
+        document.getElementById('fecha').valueAsDate = new Date();
+        
+        // Cargar datos al iniciar
+        function cargarDatos() {
+            try {
+                const data = localStorage.getItem('gastos-app-data');
+                if (data) {
+                    const parsed = JSON.parse(data);
+                    gastos = parsed.gastos || [];
+                    presupuesto = parsed.presupuesto || 0;
+                    document.getElementById('presupuestoInicial').value = presupuesto;
+                    console.log('✓ Datos cargados:', gastos.length, 'gastos');
+                }
+            } catch (error) {
+                console.log('Primera vez usando la app');
+            }
+            actualizarTodo();
+        }
+        
+        // Guardar datos en localStorage
+        function guardarDatos() {
+            try {
+                const data = {
+                    presupuesto: presupuesto,
+                    gastos: gastos,
+                    ultimaActualizacion: new Date().toISOString()
+                };
+                localStorage.setItem('gastos-app-data', JSON.stringify(data));
+                console.log('✓ Datos guardados');
+                return true;
+            } catch (error) {
+                console.error('Error al guardar:', error);
+                alert('Error al guardar datos');
+                return false;
+            }
+        }
+        
+        // Exportar datos como backup
+        function exportarDatos() {
+            const data = {
+                presupuesto: presupuesto,
+                gastos: gastos,
+                fechaExportacion: new Date().toISOString()
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `gastos-backup-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            mostrarAlerta('💾 Backup descargado');
+        }
+        
+        // Importar datos desde backup
+        function importarDatos(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (confirm('¿Importar estos datos? Se reemplazarán los datos actuales.')) {
+                        gastos = data.gastos || [];
+                        presupuesto = data.presupuesto || 0;
+                        document.getElementById('presupuestoInicial').value = presupuesto;
+                        guardarDatos();
+                        actualizarTodo();
+                        mostrarAlerta('✓ Datos importados correctamente');
+                    }
+                } catch (error) {
+                    alert('Error al importar el archivo');
+                }
+            };
+            reader.readAsText(file);
+        }
+        
+        // Mostrar alerta
+        function mostrarAlerta(mensaje) {
+            const alert = document.getElementById('alert');
+            alert.textContent = mensaje;
+            alert.classList.add('show');
+            setTimeout(() => {
+                alert.classList.remove('show');
+            }, 2000);
+        }
+        
+        // Cambio de presupuesto
+        document.getElementById('presupuestoInicial').addEventListener('change', function() {
+            presupuesto = parseFloat(this.value) || 0;
+            guardarDatos();
+            actualizarEstadisticas();
+            mostrarAlerta('💵 Presupuesto actualizado');
+        });
+        
+        // Formatear dinero
+        function formatMoney(amount) {
+            return new Intl.NumberFormat('es-CO', {
+                style: 'currency',
+                currency: 'COP',
+                minimumFractionDigits: 0
+            }).format(amount);
+        }
+        
+        // Actualizar estadísticas
+        function actualizarEstadisticas() {
+            const totalGastado = gastos.reduce((sum, gasto) => sum + gasto.monto, 0);
+            const disponible = presupuesto - totalGastado;
+            
+            document.getElementById('inicial').textContent = formatMoney(presupuesto);
+            document.getElementById('totalGastado').textContent = formatMoney(totalGastado);
+            document.getElementById('disponible').textContent = formatMoney(disponible);
+        }
+        
+        // Actualizar categorías con acordeón
+        function actualizarCategorias() {
+            const categorias = {};
+            gastos.forEach(gasto => {
+                if (!categorias[gasto.categoria]) {
+                    categorias[gasto.categoria] = [];
+                }
+                categorias[gasto.categoria].push(gasto);
+            });
+            
+            const container = document.getElementById('categoryBreakdown');
+            container.innerHTML = '';
+            
+            if (Object.keys(categorias).length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📭</div>
+                        <p>No hay gastos registrados</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Ordenar categorías por total gastado (mayor a menor)
+            const categoriasOrdenadas = Object.entries(categorias).sort((a, b) => {
+                const totalA = a[1].reduce((sum, g) => sum + g.monto, 0);
+                const totalB = b[1].reduce((sum, g) => sum + g.monto, 0);
+                return totalB - totalA;
+            });
+            
+            categoriasOrdenadas.forEach(([cat, gastosCategoria]) => {
+                const totalCategoria = gastosCategoria.reduce((sum, g) => sum + g.monto, 0);
+                
+                const div = document.createElement('div');
+                div.className = 'category-item';
+                div.onclick = function() {
+                    const expenses = this.querySelector('.category-expenses');
+                    const icon = this.querySelector('.expand-icon');
+                    expenses.classList.toggle('show');
+                    icon.classList.toggle('rotated');
+                };
+                
+                // Ordenar gastos por fecha (más reciente primero)
+                const gastosSorted = [...gastosCategoria].sort((a, b) => 
+                    new Date(b.fecha) - new Date(a.fecha)
+                );
+                
+                const gastosHTML = gastosSorted.map(gasto => `
+                    <div class="category-expense-item">
+                        <div class="expense-info">
+                            <div class="expense-date">📅 ${gasto.fecha}</div>
+                            <div class="expense-amount">${formatMoney(gasto.monto)}</div>
+                        </div>
+                        <div class="expense-desc">📝 ${gasto.descripcion}</div>
+                        <button class="delete-btn-small" onclick="event.stopPropagation(); eliminarGastoDirecto(${gasto.id})">🗑️ Eliminar</button>
+                    </div>
+                `).join('');
+                
+                div.innerHTML = `
+                    <h4>
+                        <span>${cat}</span>
+                        <span class="expand-icon">▼</span>
+                    </h4>
+                    <div class="cat-amount">${formatMoney(totalCategoria)}</div>
+                    <div class="category-expenses">
+                        ${gastosHTML}
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+        
+        // Eliminar gasto directamente por ID
+        function eliminarGastoDirecto(gastoId) {
+            if (confirm('¿Eliminar este gasto?')) {
+                const index = gastos.findIndex(g => g.id === gastoId);
+                if (index !== -1) {
+                    gastos.splice(index, 1);
+                    guardarDatos();
+                    actualizarTodo();
+                    mostrarAlerta('🗑️ Gasto eliminado');
+                }
+            }
+        }
+        
+        // Actualizar todo
+        function actualizarTodo() {
+            actualizarEstadisticas();
+            actualizarCategorias();
+        }
+        
+        // Reiniciar todo
+        function resetearTodo() {
+            if (confirm('⚠️ Esto borrará TODOS tus datos. ¿Estás seguro?')) {
+                if (confirm('¿REALMENTE seguro? Esta acción no se puede deshacer.')) {
+                    gastos = [];
+                    presupuesto = 0;
+                    document.getElementById('presupuestoInicial').value = 0;
+                    guardarDatos();
+                    actualizarTodo();
+                    mostrarAlerta('🔄 Todo reiniciado');
+                }
+            }
+        }
+        
+        // Formulario de gastos - VERSIÓN MEJORADA
+        const form = document.getElementById('gastoForm');
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('Formulario enviado!'); // Para debug
+            
+            try {
+                const fecha = document.getElementById('fecha').value;
+                const categoria = document.getElementById('categoria').value;
+                const montoInput = document.getElementById('monto').value;
+                const monto = parseFloat(montoInput);
+                const descripcion = document.getElementById('descripcion').value || '-';
+                
+                console.log('Datos:', {fecha, categoria, monto, descripcion}); // Para debug
+                
+                if (!fecha) {
+                    alert('⚠️ Selecciona una fecha');
+                    return false;
+                }
+                
+                if (!categoria) {
+                    alert('⚠️ Selecciona una categoría');
+                    return false;
+                }
+                
+                if (!montoInput || isNaN(monto) || monto <= 0) {
+                    alert('⚠️ Ingresa un monto válido mayor a 0');
+                    return false;
+                }
+                
+                const gasto = {
+                    fecha: fecha,
+                    categoria: categoria,
+                    monto: monto,
+                    descripcion: descripcion,
+                    id: Date.now()
+                };
+                
+                console.log('Guardando gasto:', gasto); // Para debug
+                
+                gastos.push(gasto);
+                guardarDatos();
+                actualizarTodo();
+                
+                // Limpiar formulario
+                form.reset();
+                document.getElementById('fecha').valueAsDate = new Date();
+                
+                // Mostrar confirmación
+                mostrarAlerta('✓ Gasto guardado correctamente');
+                
+                console.log('Total gastos:', gastos.length); // Para debug
+                
+            } catch (error) {
+                console.error('Error al guardar:', error);
+                alert('❌ Error al guardar el gasto: ' + error.message);
+            }
+            
+            return false;
+        });
+        
+        // Inicializar al cargar la página
+        cargarDatos();
+
+        // Registrar Service Worker para PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('data:text/javascript;base64,c2VsZi5hZGRFdmVudExpc3RlbmVyKCdpbnN0YWxsJywgZnVuY3Rpb24oZXZlbnQpIHsKICBzZWxmLnNraXBXYWl0aW5nKCk7Cn0pOwoKc2VsZi5hZGRFdmVudExpc3RlbmVyKCdhY3RpdmF0ZScsIGZ1bmN0aW9uKGV2ZW50KSB7CiAgcmV0dXJuIHNlbGYuY2xpZW50cy5jbGFpbSgpOwp9KTsKCnNlbGYuYWRkRXZlbnRMaXN0ZW5lcignZmV0Y2gnLCBmdW5jdGlvbihldmVudCkgewogIGV2ZW50LnJlc3BvbmRXaXRoKAogICAgZmV0Y2goZXZlbnQucmVxdWVzdCkuY2F0Y2goZnVuY3Rpb24oKSB7CiAgICAgIHJldHVybiBuZXcgUmVzcG9uc2UoJ09mZmxpbmUgbW9kZScpOwogICAgfSkKICApOwp9KTs=')
+                .catch(() => console.log('Service Worker no soportado'));
+            });
+        }
+
+        // Detectar cuando se instala la app
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            console.log('App lista para instalar');
+        });
+
+        window.addEventListener('appinstalled', () => {
+            console.log('¡App instalada exitosamente!');
+            mostrarAlerta('✓ App instalada en tu pantalla de inicio');
+        });
+    </script>
+</body>
+</html>
